@@ -62,3 +62,108 @@ Deployment:
 ---
 
 ## Project Architecture
+
+src/main/java/com/preetam/authsystem
+
+config
+├── SecurityConfig
+├── JwtAuthenticationFilter
+
+controller
+├── UserController
+├── ProductController
+
+service
+├── UserService
+├── ProductService
+├── JwtService
+
+repository
+├── UserRepository
+├── ProductRepository
+
+entity
+├── User
+├── Product
+├── Role
+
+dto
+├── LoginRequest
+├── LoginResponse
+├── RegisterRequest
+├── ProductRequest
+├── ProductResponse
+├── ApiResponse
+
+exception
+├── GlobalExceptionHandler
+├── ErrorResponse
+├── ResourceNotFoundException
+
+
+---
+
+## API Endpoints
+
+### Authentication
+
+| Method | Endpoint | Description |
+|------|------|------|
+| POST | /api/auth/register | Register new user |
+| POST | /api/auth/login | Login and receive JWT |
+
+---
+
+### Products
+
+| Method | Endpoint | Access |
+|------|------|------|
+| GET | /api/products | Public |
+| GET | /api/products/{id} | Public |
+| POST | /api/products | ADMIN |
+| PUT | /api/products/{id} | ADMIN |
+| DELETE | /api/products/{id} | ADMIN |
+
+---
+
+## Example JWT Authentication
+Authorization: Bearer <your_token>
+---
+
+## Swagger Documentation
+http://localhost:8080/swagger-ui/index.html
+
+Deployed API Docs:
+
+
+https://your-deployed-url/swagger-ui/index.html
+
+
+---
+
+## Running the Project
+
+### Clone
+
+
+git clone https://github.com/yourusername/auth-system-api.git
+
+
+### Build
+
+
+mvn clean install
+
+
+### Run
+
+
+mvn spring-boot:run
+
+
+---
+
+## Author
+
+Preetam
+Java Backend Developer
